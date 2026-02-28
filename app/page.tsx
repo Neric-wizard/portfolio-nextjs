@@ -5,7 +5,7 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700 text-white">
         <div className="text-center px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, I'm <span className="text-yellow-300">Njeck Neric</span>
+            Hi, I'm <span className="text-yellow-300">Neric Nigob</span>
           </h1>
           <p className="text-xl md:text-2xl mb-6">
             B-Tech Graduate | Java Developer | Cloud Engineer
