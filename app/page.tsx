@@ -53,7 +53,7 @@ export default function Home() {
             <SkillCard title="Languages" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL","Python"]} />
             <SkillCard title="Frameworks" skills={["Spring Boot", "React", "Next.js", "Node.js"]} />
             <SkillCard title="Databases" skills={["MySQL", "PostgreSQL", "MongoDB", "Firebase"]} />
-            <SkillCard title="DevOps" skills={["Docker", "AWS", "Azure", "Git"]} />
+            <SkillCard title="DevOps" skills={["Docker", "AWS", "Azure", "Git", "Linux"]} />
           </div>
         </div>
       </section>
