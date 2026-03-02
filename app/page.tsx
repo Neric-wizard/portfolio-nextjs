@@ -1,9 +1,18 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700 text-white">
-        <div className="text-center px-4">
+        <motion.div
+          className="text-center px-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Hi, I'm <span className="text-red-300">Neric Nigob</span>
           </h1>
@@ -27,11 +36,18 @@ export default function Home() {
               Get In Touch
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
+      <motion.section
+        id="about"
+        className="py-20 px-4"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
           <p className="text-lg mb-4">
@@ -43,23 +59,37 @@ export default function Home() {
             applications, implementing DevOps practices with Docker, and creating scalable solutions.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 bg-gray-50">
+      <motion.section
+        id="skills"
+        className="py-20 px-4 bg-gray-50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard title="Languages" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL","Python"]} />
+            <SkillCard title="Languages" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL", "Python"]} />
             <SkillCard title="Frameworks" skills={["Spring Boot", "React", "Next.js", "Node.js"]} />
             <SkillCard title="Databases" skills={["MySQL", "PostgreSQL", "MongoDB", "Firebase"]} />
-            <SkillCard title="DevOps" skills={["Docker", "AWS", "Azure", "Git", "Linux"]} />
+            <SkillCard title="DevOps" skills={["Docker", "AWS", "Azure", "Git"]} />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4">
+      <motion.section
+        id="projects"
+        className="py-20 px-4"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -83,10 +113,17 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-gray-50">
+      <motion.section
+        id="contact"
+        className="py-20 px-4 bg-gray-50"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
           <p className="text-lg mb-8">
@@ -98,7 +135,8 @@ export default function Home() {
             <ContactLink href="https://github.com/Neric-wizard" icon="💻" label="GitHub" />
           </div>
         </div>
-      </section>
+      </motion.section>
+
     </main>
   );
 }
