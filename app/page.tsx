@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -15,14 +16,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-
-      {/* Dark Mode Toggle Button */}
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-      >
-        {darkMode ? "☀️ Light" : "🌙 Dark"}
-      </button>
+  <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700 text-white">
