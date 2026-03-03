@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,9 +30,22 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-4">
             Hi, I'm <span className="text-red-300">Neric Nigob</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-6">
-            B-Tech Graduate | Java Developer | Cloud Engineer
-          </p>
+          <TypeAnimation
+  sequence={[
+    "B-Tech Graduate 🎓",
+    2000,
+    "Java Developer ☕",
+    2000,
+    "Cloud Engineer ☁️",
+    2000,
+    "Full Stack Developer 💻",
+    2000,
+  ]}
+  wrapper="p"
+  speed={50}
+  repeat={Infinity}
+  className="text-xl md:text-2xl mb-6 font-medium"
+/>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Passionate about building scalable applications with Java, Spring Boot, and Cloud technologies.
           </p>
