@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { TypeAnimation } from "react-type-animation";
+import Footer from "./Footer";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -213,8 +214,9 @@ export default function Home() {
             <ContactLink href="https://github.com/Neric-wizard" icon="💻" label="GitHub" />
           </div>
         </div>
-      </motion.section>
+     </motion.section>
 
+      <Footer />
     </main>
   );
 }
