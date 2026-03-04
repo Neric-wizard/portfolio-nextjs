@@ -21,16 +21,22 @@ export default function Home() {
   <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+      {/* Background glowing blobs */}
+<div className="absolute inset-0 overflow-hidden">
+  <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+  <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+  <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+</div>
         <motion.div
-          className="text-center px-4"
+          className="text-center px-4 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, I'm <span className="text-red-300">Neric Nigob</span>
-          </h1>
+         <h1 className="text-5xl md:text-7xl font-bold mb-4">
+  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric Nigob</span>
+</h1>
           <TypeAnimation
   sequence={[
     "B-Tech Graduate 🎓",
@@ -77,16 +83,39 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 dark:text-white">About Me</h2>
-          <p className="text-lg mb-4 dark:text-gray-300">
-            I'm a B-Tech graduate from Cameroon with a strong passion for software development,
-            specializing in Java, Cloud technologies, and modern web development.
-          </p>
-          <p className="text-lg mb-4 dark:text-gray-300">
-            My journey in tech has equipped me with hands-on experience in building full-stack
-            applications, implementing DevOps practices with Docker, and creating scalable solutions.
-          </p>
-        </div>
+  <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">About Me</h2>
+  <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
+  <div className="grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <p className="text-lg mb-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+        I'm a B-Tech graduate from Cameroon with a strong passion for software development,
+        specializing in Java, Cloud technologies, and modern web development.
+      </p>
+      <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        My journey in tech has equipped me with hands-on experience in building full-stack
+        applications, implementing DevOps practices with Docker, and creating scalable solutions.
+      </p>
+    </div>
+    <div className="grid grid-cols-2 gap-4">
+      <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-blue-600 dark:text-blue-400">2+</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
+      </div>
+      <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-purple-600 dark:text-purple-400">5+</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Technologies</p>
+      </div>
+      <div className="bg-indigo-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-indigo-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">B-Tech</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Degree</p>
+      </div>
+      <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-blue-600 dark:text-blue-400">🇨🇲</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cameroon</p>
+      </div>
+    </div>
+  </div>
+</div>
       </motion.section>
 
       {/* Skills Section */}
@@ -99,12 +128,13 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 dark:text-white">Technical Skills</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">Technical Skills</h2>
+<div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard title="Languages" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL", "Python"]} />
-            <SkillCard title="Frameworks" skills={["Spring Boot", "React", "Next.js", "Node.js"]} />
-            <SkillCard title="Databases" skills={["MySQL", "PostgreSQL", "MongoDB", "Firebase"]} />
-            <SkillCard title="DevOps" skills={["Docker", "AWS", "Azure", "Git"]} />
+            <SkillCard title="Languages" emoji="💻" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL", "Python"]} />
+<SkillCard title="Frameworks" emoji="⚡" skills={["Spring Boot", "React", "Next.js", "Node.js"]} />
+<SkillCard title="Databases" emoji="🗄️" skills={["MySQL", "PostgreSQL", "MongoDB", "Firebase"]} />
+<SkillCard title="DevOps" emoji="🚀" skills={["Docker", "AWS", "Azure", "Git"]} />
           </div>
         </div>
       </motion.section>
@@ -119,7 +149,8 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 dark:text-white">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">Featured Projects</h2>
+<div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
               title="Course Registration System"
@@ -153,7 +184,8 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 dark:text-white">Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-4 dark:text-white">Get In Touch</h2>
+<div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg mb-8 dark:text-gray-300">
             I'm currently open to new opportunities. Feel free to reach out!
           </p>
@@ -222,10 +254,13 @@ export default function Home() {
 }
 
 // Skill Card Component
-function SkillCard({ title, skills }: { title: string; skills: string[] }) {
+function SkillCard({ title, emoji, skills }: { title: string; emoji: string; skills: string[] }) {
   return (
     <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-      <h3 className="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">{title}</h3>
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-2xl">{emoji}</span>
+        <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">{title}</h3>
+      </div>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span key={skill} className="bg-blue-100 dark:bg-gray-600 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-semibold">
