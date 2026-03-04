@@ -50,7 +50,7 @@ export default function Home() {
               View My Work
             </a>
             
-              <a href="#contact"
+             <a href="#contact"
               className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"
             >
               Get In Touch
@@ -143,6 +143,7 @@ export default function Home() {
               description="Full-stack web application with Docker containerization, secure authentication, and real-time course management."
               tech={["PHP", "MySQL", "Docker", "JavaScript"]}
               github="https://github.com/Neric-wizard/course-registration-system"
+              images={["/course-1.png", "/course-2.png", "/course-3.png", "/course-4.png", "/course-5.png"]}
             />
             <ProjectCard
               title="Java Spring Boot API"
@@ -296,20 +297,57 @@ function ProjectCard({
   description,
   tech,
   github,
-  comingSoon
+  comingSoon,
+  images
 }: {
   title: string;
   description: string;
   tech: string[];
   github?: string;
   comingSoon?: boolean;
+  images?: string[];
 }) {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [images]);
+
   return (
     <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
-      <div className="h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white/20 text-8xl font-black">{title.charAt(0)}</span>
-        </div>
+      <div className="h-48 relative overflow-hidden">
+        {images && images.length > 0 ? (
+          <>
+            {images.map((img, i) => (
+              <img
+                key={i}
+                src={img}
+                alt={title}
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+                style={{ opacity: i === currentImage ? 1 : 0 }}
+              />
+            ))}
+            {/* Dots indicator */}
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 z-10">
+              {images.map((_, i) => (
+                <div
+                  key={i}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                    i === currentImage ? "bg-white scale-125" : "bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        ) : (
+          <div className="h-full bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 flex items-center justify-center">
+            <span className="text-white/20 text-8xl font-black">{title.charAt(0)}</span>
+          </div>
+        )}
       </div>
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-2 dark:text-white">{title}</h3>
@@ -339,7 +377,7 @@ function ProjectCard({
 function ContactLink({ href, icon, label }: { href: string; icon: string; label: string }) {
   return (
     
-      <a href={href}
+     <a href={href}
       target="_blank"
       className="flex items-center gap-2 bg-white dark:bg-gray-700 dark:text-white px-6 py-3 rounded-lg shadow hover:shadow-lg transition"
     >
