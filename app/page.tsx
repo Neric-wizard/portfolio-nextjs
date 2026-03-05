@@ -117,10 +117,10 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">Technical Skills</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard title="Languages" emoji="💻" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL", "Python"]} />
+            <SkillCard title="Languages" emoji="💻" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL", "Python", "C++", "Kotlin"]} />
             <SkillCard title="Frameworks" emoji="⚡" skills={["Spring Boot", "React", "Next.js", "Node.js"]} />
             <SkillCard title="Databases" emoji="🗄️" skills={["MySQL", "PostgreSQL", "MongoDB", "Firebase"]} />
-            <SkillCard title="DevOps" emoji="🚀" skills={["Docker", "AWS", "Azure", "Git"]} />
+            <SkillCard title="DevOps" emoji="🚀" skills={["Docker", "AWS", "Azure", "Git", "Arduino", "Firebase"]} />
           </div>
         </div>
       </motion.section>
@@ -137,27 +137,28 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">Featured Projects</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ProjectCard
-              title="Course Registration System"
-              description="Full-stack web application with Docker containerization, secure authentication, and real-time course management."
-              tech={["PHP", "MySQL", "Docker", "JavaScript"]}
-              github="https://github.com/Neric-wizard/course-registration-system"
-              images={["/course-1.png", "/course-2.png", "/course-3.png", "/course-4.png", "/course-5.png"]}
-            />
-            <ProjectCard
-              title="Java Spring Boot API"
-              description="RESTful API with JWT authentication, Swagger documentation, and MySQL database integration."
-              tech={["Java", "Spring Boot", "MySQL", "JWT"]}
-              comingSoon
-            />
-            <ProjectCard
-              title="Cloud Deployment"
-              description="Microservices deployment on AWS with CI/CD pipeline and monitoring."
-              tech={["AWS", "Docker", "Kubernetes", "CI/CD"]}
-              comingSoon
-            />
-          </div>
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <ProjectCard
+    title="RFID Attendance System"
+    description="Smart IoT attendance tracking system integrating Arduino hardware, Firebase Firestore cloud sync, and a Java Swing desktop app with real-time monitoring and CSV export."
+    tech={["Arduino", "Firebase", "Java", "Kotlin", "C++"]}
+    github="https://github.com/Neric-wizard/rfid-attendance-system"
+    images={["/rfid-1.png", "/rfid-2.png", "/rfid-3.png", "/rfid-4.png", "/rfid-5.png"]}
+  />
+  <ProjectCard
+    title="Course Registration System"
+    description="Full-stack web application with Docker containerization, secure authentication, and real-time course management."
+    tech={["PHP", "MySQL", "Docker", "JavaScript"]}
+    github="https://github.com/Neric-wizard/course-registration-system"
+    images={["/course-1.png", "/course-2.png", "/course-3.png", "/course-4.png", "/course-5.png"]}
+  />
+  <ProjectCard
+    title="Java Spring Boot API"
+    description="RESTful API with JWT authentication, Swagger documentation, and MySQL database integration."
+    tech={["Java", "Spring Boot", "MySQL", "JWT"]}
+    comingSoon
+  />
+</div>
         </div>
       </motion.section>
 
