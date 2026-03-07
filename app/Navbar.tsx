@@ -2,16 +2,20 @@
 import { useState, useEffect } from "react";
 
 export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (val: boolean) => void }) {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+ const [scrolled, setScrolled] = useState(false);
+const [menuOpen, setMenuOpen] = useState(false);
+const [scrollProgress, setScrollProgress] = useState(0);
+ useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    setScrollProgress(progress);
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -80,6 +84,14 @@ export default function Navbar({ darkMode, setDarkMode }: { darkMode: boolean; s
           <a href="#contact" onClick={() => setMenuOpen(false)} className="text-gray-700 dark:text-gray-300 font-medium hover:text-blue-400 transition">Contact</a>
         </div>
       )}
+
+      {/* Scroll Progress Bar */}
+      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-200/20">
+        <div
+          className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
 
     </nav>
   );

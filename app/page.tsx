@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import BackToTop from "./BackToTop";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -119,16 +120,38 @@ export default function Home() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">Technical Skills</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard title="Languages" emoji="💻" skills={["Java", "JavaScript", "TypeScript", "PHP", "SQL", "Python", "C++", "Kotlin"]} />
-            <SkillCard title="Frameworks" emoji="⚡" skills={["Spring Boot", "React", "Next.js", "Node.js"]} />
-            <SkillCard title="Databases" emoji="🗄️" skills={["MySQL", "PostgreSQL", "MongoDB", "Firebase"]} />
-            <SkillCard title="DevOps" emoji="🚀" skills={["Docker", "AWS", "Azure", "Git", "Arduino", "Firebase"]} />
-          </div>
-        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+  <SkillCard title="Languages" emoji="💻" skills={[
+    { name: "Java", level: 80 },
+    { name: "PHP", level: 75 },
+    { name: "JavaScript", level: 75 },
+    { name: "SQL", level: 70 },
+    { name: "Python", level: 60 },
+    { name: "C++", level: 65 },
+    { name: "Kotlin", level: 55 },
+    { name: "TypeScript", level: 60 },
+  ]} />
+  <SkillCard title="Frameworks" emoji="⚡" skills={[
+    { name: "HTML/CSS", level: 85 },
+    { name: "Spring Boot", level: 70 },
+    { name: "Tailwind CSS", level: 70 },
+    { name: "React", level: 65 },
+    { name: "Next.js", level: 60 },
+    { name: "Node.js", level: 60 },
+  ]} />
+  <SkillCard title="Databases" emoji="🗄️" skills={[
+    { name: "MySQL", level: 80 },
+    { name: "Firebase", level: 70 },
+    { name: "PostgreSQL", level: 60 },
+    { name: "MongoDB", level: 55 },
+  ]} />
+  <SkillCard title="DevOps & Tools" emoji="🚀" skills={[
+    { name: "Git", level: 80 },
+    { name: "Docker", level: 75 },
+    { name: "Arduino", level: 70 },
+    { name: "AWS", level: 55 },
+  ]} />
+</div>
       </motion.section>
 
       {/* Projects Section */}
@@ -241,7 +264,8 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
-
+<BackToTop />
+      <Footer />
       <Footer />
     </main>
   );
@@ -280,18 +304,40 @@ function FadeText() {
 }
 
 // Skill Card Component
-function SkillCard({ title, emoji, skills }: { title: string; emoji: string; skills: string[] }) {
+function SkillCard({ title, emoji, skills }: {
+  title: string;
+  emoji: string;
+  skills: { name: string; level: number }[]
+}) {
   return (
-    <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-      <div className="flex items-center gap-2 mb-4">
+    <div className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+      <div className="flex items-center gap-2 mb-6">
         <span className="text-2xl">{emoji}</span>
         <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">{title}</h3>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-4">
         {skills.map((skill) => (
-          <span key={skill} className="bg-blue-100 dark:bg-gray-600 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-semibold">
-            {skill}
-          </span>
+          <motion.div
+            key={skill.name}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex justify-between mb-1">
+              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{skill.name}</span>
+              <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">{skill.level}%</span>
+            </div>
+            <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+              <motion.div
+                className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: `${skill.level}%` }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true }}
+              />
+            </div>
+          </motion.div>
         ))}
       </div>
     </div>
