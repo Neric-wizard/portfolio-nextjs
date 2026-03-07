@@ -62,8 +62,31 @@ export default function Home() {
             >
               Get In Touch
             </a>
-          </div>
+         </div>
         </motion.div>
+
+        {/* Tech Stack Marquee */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-sm border-t border-white/20 py-4 overflow-hidden">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[
+              "☕ Java", "⚡ Spring Boot", "⚛️ React", "🐳 Docker",
+              "☁️ AWS", "🔥 Firebase", "🐬 MySQL", "💻 Next.js",
+              "🎯 Arduino", "📱 Kotlin", "🐘 PostgreSQL", "🟨 JavaScript",
+              "☕ Java", "⚡ Spring Boot", "⚛️ React", "🐳 Docker",
+              "☁️ AWS", "🔥 Firebase", "🐬 MySQL", "💻 Next.js",
+              "🎯 Arduino", "📱 Kotlin", "🐘 PostgreSQL", "🟨 JavaScript",
+            ].map((tech, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center mx-6 text-white/80 font-semibold text-sm tracking-wide"
+              >
+                {tech}
+                <span className="ml-6 text-white/30">|</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
       </section>
 
       {/* About Section */}
