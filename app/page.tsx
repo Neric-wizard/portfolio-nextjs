@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import BackToTop from "./BackToTop";
 import CursorGlow from "./CursorGlow";
+import Tilt from "react-parallax-tilt";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -396,7 +397,15 @@ function ProjectCard({
   images?: string[];
 }) {
   return (
-    <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
+   <Tilt
+  tiltMaxAngleX={10}
+  tiltMaxAngleY={10}
+  glareEnable={true}
+  glareMaxOpacity={0.2}
+  glareColor="#ffffff"
+  glarePosition="all"
+  className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+>
       <div className="h-48 relative overflow-hidden">
         {images && images.length > 0 ? (
           <Swiper
@@ -443,7 +452,7 @@ className="h-full w-full"
           </a>
         ) : null}
       </div>
-    </div>
+   </Tilt>
   );
 }
 
