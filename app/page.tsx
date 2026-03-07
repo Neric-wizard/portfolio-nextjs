@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -143,7 +149,7 @@ export default function Home() {
     description="Smart IoT attendance tracking system integrating Arduino hardware, Firebase Firestore cloud sync, and a Java Swing desktop app with real-time monitoring and CSV export."
     tech={["Arduino", "Firebase", "Java", "Kotlin", "C++"]}
     github="https://github.com/Neric-wizard/rfid-attendance-system"
-    images={["/rfid-1.png", "/rfid-2.png", "/rfid-3.png", "/rfid-4.png", "/rfid-5.png"]}
+    images={["/rfid-1.jpg", "/rfid-2.jpg", "/rfid-3.jpg", "/rfid-4.jpg", "/rfid-5.jpg"]}
   />
   <ProjectCard
     title="Course Registration System"
@@ -308,42 +314,28 @@ function ProjectCard({
   comingSoon?: boolean;
   images?: string[];
 }) {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    if (!images || images.length === 0) return;
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [images]);
-
   return (
-    <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+    <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
       <div className="h-48 relative overflow-hidden">
         {images && images.length > 0 ? (
-          <>
+          <Swiper
+           modules={[Autoplay, Pagination, EffectFade]}
+effect="fade"
+autoplay={{ delay: 4000, disableOnInteraction: false }}
+pagination={{ clickable: true }}
+loop={true}
+className="h-full w-full"
+          >
             {images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={title}
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-                style={{ opacity: i === currentImage ? 1 : 0 }}
-              />
-            ))}
-            {/* Dots indicator */}
-            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 z-10">
-              {images.map((_, i) => (
-                <div
-                  key={i}
-                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                    i === currentImage ? "bg-white scale-125" : "bg-white/50"
-                  }`}
+              <SwiperSlide key={i}>
+                <img
+                  src={img}
+                  alt={title}
+                  className="w-full h-full object-cover"
                 />
-              ))}
-            </div>
-          </>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         ) : (
           <div className="h-full bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 flex items-center justify-center">
             <span className="text-white/20 text-8xl font-black">{title.charAt(0)}</span>
