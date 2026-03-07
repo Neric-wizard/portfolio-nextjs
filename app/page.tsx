@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import BackToTop from "./BackToTop";
+import CursorGlow from "./CursorGlow";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <CursorGlow />
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden animate-gradient" style={{ background: "linear-gradient(-45deg, #1d4ed8, #7c3aed, #4f46e5, #2563eb, #9333ea)", backgroundSize: "300% 300%" }}>
@@ -42,9 +44,20 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric Nigob</span>
-          </h1>
+         {/* Available for work badge */}
+<div className="flex justify-center mb-6">
+  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full">
+    <div className="relative flex h-3 w-3">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+    </div>
+    <span className="text-white text-sm font-medium">Available for work</span>
+  </div>
+</div>
+
+<h1 className="text-5xl md:text-7xl font-bold mb-4">
+  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric Nigob</span>
+</h1>
           <FadeText />
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Passionate about building scalable applications with Java, Spring Boot, and Cloud technologies.
