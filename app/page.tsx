@@ -266,7 +266,6 @@ export default function Home() {
       </motion.section>
 <BackToTop />
       <Footer />
-      <Footer />
     </main>
   );
 }
