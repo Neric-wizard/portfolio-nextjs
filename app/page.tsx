@@ -27,7 +27,7 @@ export default function Home() {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden animate-gradient" style={{ background: "linear-gradient(-45deg, #1d4ed8, #7c3aed, #4f46e5, #2563eb, #9333ea)", backgroundSize: "300% 300%" }}>
         
         {/* Background glowing blobs */}
         <div className="absolute inset-0 overflow-hidden">
@@ -112,24 +112,24 @@ export default function Home() {
                 applications, implementing DevOps practices with Docker, and creating scalable solutions.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
-                <p className="text-3xl font-black text-blue-600 dark:text-blue-400">2+</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
-              </div>
-              <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
-                <p className="text-3xl font-black text-purple-600 dark:text-purple-400">5+</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Technologies</p>
-              </div>
-              <div className="bg-indigo-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-indigo-100 dark:border-gray-700">
-                <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">B-Tech</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Degree</p>
-              </div>
-              <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
-                <p className="text-3xl font-black text-blue-600 dark:text-blue-400">🇨🇲</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cameroon</p>
-              </div>
-            </div>
+           <div className="grid grid-cols-2 gap-4">
+  <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
+    <p className="text-3xl font-black text-blue-600 dark:text-blue-400">2+</p>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
+  </div>
+  <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
+    <p className="text-3xl font-black text-purple-600 dark:text-purple-400">10+</p>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Technologies</p>
+  </div>
+  <div className="bg-indigo-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-indigo-100 dark:border-gray-700">
+    <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">3+</p>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Years Coding</p>
+  </div>
+  <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
+    <p className="text-3xl font-black text-blue-600 dark:text-blue-400">🇨🇲</p>
+    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cameroon</p>
+  </div>
+</div>
           </div>
         </div>
       </motion.section>
