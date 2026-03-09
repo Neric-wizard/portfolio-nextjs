@@ -91,10 +91,10 @@ export default function Home() {
     <img
       src="/profile.jpg"
       alt="Neric Nigob"
-      className="relative w-48 h-56 md:w-72 md:h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
+      className="relative w-48 h-56 md:w-72 md:h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl mix-blend-luminosity"
     />
     {/* Floating badge */}
-    <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg">
+    <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg hidden md:block">
       <p className="text-sm font-bold text-gray-800 dark:text-white">⚡ Open to opportunities</p>
     </div>
   </motion.div>
