@@ -84,7 +84,7 @@ export default function Home() {
     initial={{ opacity: 0, x: 50 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8, delay: 0.3 }}
-    className="relative hidden md:block flex-shrink-0"
+   className="relative flex-shrink-0"
   >
     {/* Glowing ring */}
     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 blur-md opacity-70 scale-105 rounded-2xl" />
