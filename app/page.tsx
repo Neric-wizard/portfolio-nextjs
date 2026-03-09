@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         <motion.div
- className="relative z-10 w-full max-w-6xl mx-auto px-8 flex flex-col-reverse md:flex-row items-center justify-between gap-12"
+  className="relative z-10 w-full max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12"
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
@@ -84,17 +84,17 @@ export default function Home() {
     initial={{ opacity: 0, x: 50 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8, delay: 0.3 }}
-   className="relative flex-shrink-0"
+    className="relative hidden md:block flex-shrink-0"
   >
     {/* Glowing ring */}
     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 blur-md opacity-70 scale-105 rounded-2xl" />
     <img
       src="/profile.jpg"
       alt="Neric Nigob"
-      className="relative w-48 h-56 md:w-72 md:h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl mix-blend-luminosity"
+      className="relative w-72 h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
     />
     {/* Floating badge */}
-    <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg hidden md:block">
+    <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg">
       <p className="text-sm font-bold text-gray-800 dark:text-white">⚡ Open to opportunities</p>
     </div>
   </motion.div>
@@ -169,54 +169,49 @@ export default function Home() {
     </div>
   </div>
 </motion.section>
-     {/* Skills Section */}
-<motion.section
-  id="skills"
-  className="py-20 px-4 bg-gray-50 dark:bg-gray-800"
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.7 }}
-  viewport={{ once: true }}
->
-  <div className="max-w-6xl mx-auto">
-    <h2 className="text-4xl font-bold text-center mb-12">
-      My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Skills</span>
-      <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
-    </h2>
-    <div className="grid md:grid-cols-2 gap-8">
-      <SkillCard title="Languages" emoji="💻" skills={[
-        { name: "Java", level: 80 },
-        { name: "PHP", level: 75 },
-        { name: "JavaScript", level: 75 },
-        { name: "SQL", level: 70 },
-        { name: "Python", level: 60 },
-        { name: "C++", level: 65 },
-        { name: "Kotlin", level: 55 },
-        { name: "TypeScript", level: 60 },
-      ]} />
-      <SkillCard title="Frameworks" emoji="⚡" skills={[
-        { name: "HTML/CSS", level: 85 },
-        { name: "Spring Boot", level: 70 },
-        { name: "Tailwind CSS", level: 70 },
-        { name: "React", level: 65 },
-        { name: "Next.js", level: 60 },
-        { name: "Node.js", level: 60 },
-      ]} />
-      <SkillCard title="Databases" emoji="🗄️" skills={[
-        { name: "MySQL", level: 80 },
-        { name: "Firebase", level: 70 },
-        { name: "PostgreSQL", level: 60 },
-        { name: "MongoDB", level: 55 },
-      ]} />
-      <SkillCard title="DevOps & Tools" emoji="🚀" skills={[
-        { name: "Git", level: 80 },
-        { name: "Docker", level: 75 },
-        { name: "Arduino", level: 70 },
-        { name: "AWS", level: 55 },
-      ]} />
-    </div>
-  </div>
-</motion.section>
+      {/* Skills Section */}
+      <motion.section
+        id="skills"
+        className="py-20 px-4 bg-gray-50 dark:bg-gray-800"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
+        <div className="grid md:grid-cols-2 gap-8">
+  <SkillCard title="Languages" emoji="💻" skills={[
+    { name: "Java", level: 80 },
+    { name: "PHP", level: 75 },
+    { name: "JavaScript", level: 75 },
+    { name: "SQL", level: 70 },
+    { name: "Python", level: 60 },
+    { name: "C++", level: 65 },
+    { name: "Kotlin", level: 55 },
+    { name: "TypeScript", level: 60 },
+  ]} />
+  <SkillCard title="Frameworks" emoji="⚡" skills={[
+    { name: "HTML/CSS", level: 85 },
+    { name: "Spring Boot", level: 70 },
+    { name: "Tailwind CSS", level: 70 },
+    { name: "React", level: 65 },
+    { name: "Next.js", level: 60 },
+    { name: "Node.js", level: 60 },
+  ]} />
+  <SkillCard title="Databases" emoji="🗄️" skills={[
+    { name: "MySQL", level: 80 },
+    { name: "Firebase", level: 70 },
+    { name: "PostgreSQL", level: 60 },
+    { name: "MongoDB", level: 55 },
+  ]} />
+  <SkillCard title="DevOps & Tools" emoji="🚀" skills={[
+    { name: "Git", level: 80 },
+    { name: "Docker", level: 75 },
+    { name: "Arduino", level: 70 },
+    { name: "AWS", level: 55 },
+  ]} />
+</div>
+      </motion.section>
+
       {/* Projects Section */}
       <motion.section
         id="projects"
