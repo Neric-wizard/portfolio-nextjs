@@ -40,44 +40,66 @@ export default function Home() {
         </div>
 
         <motion.div
-          className="text-center px-4 relative z-10"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-         {/* Available for work badge */}
-<div className="flex justify-center mb-6">
-  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full">
-    <div className="relative flex h-3 w-3">
-      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+  className="relative z-10 w-full max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  {/* Text Content */}
+  <div className="text-center md:text-left flex-1">
+    {/* Available for work badge */}
+    <div className="flex justify-center md:justify-start mb-6">
+      <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full">
+        <div className="relative flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </div>
+        <span className="text-white text-sm font-medium">Available for work</span>
+      </div>
     </div>
-    <span className="text-white text-sm font-medium">Available for work</span>
-  </div>
-</div>
 
-<h1 className="text-5xl md:text-7xl font-bold mb-4">
-  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric Nigob</span>
-</h1>
-          <FadeText />
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Passionate about building scalable applications with Java, Spring Boot, and Cloud technologies.
-          </p>
-          <div className="flex gap-4 justify-center">
-            
-             <a href="#projects"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:scale-105 transition"
-            >
-              View My Work
-            </a>
-            
-             <a href="#contact"
-              className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"
-            >
-              Get In Touch
-            </a>
-         </div>
-        </motion.div>
+    <h1 className="text-5xl md:text-7xl font-bold mb-4">
+      Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric Nigob</span>
+    </h1>
+    <FadeText />
+    <p className="text-lg md:text-xl mb-8 max-w-2xl opacity-90">
+      Passionate about building scalable applications with Java, Spring Boot, and Cloud technologies.
+    </p>
+    <div className="flex gap-4 justify-center md:justify-start">
+      <a href="#projects"
+        className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:scale-105 transition"
+      >
+        View My Work
+      </a>
+      <a href="#contact"
+        className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition"
+      >
+        Get In Touch
+      </a>
+    </div>
+  </div>
+
+  {/* Profile Photo */}
+  <motion.div
+    initial={{ opacity: 0, x: 50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+    className="relative hidden md:block flex-shrink-0"
+  >
+    {/* Glowing ring */}
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 blur-md opacity-70 scale-105 rounded-2xl" />
+    <img
+      src="/profile.jpg"
+      alt="Neric Nigob"
+      className="relative w-72 h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
+    />
+    {/* Floating badge */}
+    <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg">
+      <p className="text-sm font-bold text-gray-800 dark:text-white">⚡ Open to opportunities</p>
+    </div>
+  </motion.div>
+
+</motion.div>
 
         {/* Tech Stack Marquee */}
         <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-sm border-t border-white/20 py-4 overflow-hidden">
@@ -99,98 +121,102 @@ export default function Home() {
               </span>
             ))}
           </div>
-        </div>
+  </div>
 
       </section>
 
       {/* About Section */}
-      <motion.section
-        id="about"
-        className="py-20 px-4 dark:bg-gray-900"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">About Me</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <p className="text-lg mb-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm a B-Tech graduate from Cameroon with a strong passion for software development,
-                specializing in Java, Cloud technologies, and modern web development.
-              </p>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                My journey in tech has equipped me with hands-on experience in building full-stack
-                applications, implementing DevOps practices with Docker, and creating scalable solutions.
-              </p>
-            </div>
-           <div className="grid grid-cols-2 gap-4">
-  <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
-    <p className="text-3xl font-black text-blue-600 dark:text-blue-400">2+</p>
-    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
-  </div>
-  <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
-    <p className="text-3xl font-black text-purple-600 dark:text-purple-400">10+</p>
-    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Technologies</p>
-  </div>
-  <div className="bg-indigo-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-indigo-100 dark:border-gray-700">
-    <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">3+</p>
-    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Years Coding</p>
-  </div>
-  <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
-    <p className="text-3xl font-black text-blue-600 dark:text-blue-400">🇨🇲</p>
-    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cameroon</p>
-  </div>
-</div>
-          </div>
-        </div>
-      </motion.section>
+<motion.section
+  id="about"
+  className="py-20 px-4 dark:bg-gray-900"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+>
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-4xl font-bold text-center mb-12">
+      About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Me</span>
+      <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
+    </h2>
 
-      {/* Skills Section */}
-      <motion.section
-        id="skills"
-        className="py-20 px-4 bg-gray-50 dark:bg-gray-800"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        <div className="grid md:grid-cols-2 gap-8">
-  <SkillCard title="Languages" emoji="💻" skills={[
-    { name: "Java", level: 80 },
-    { name: "PHP", level: 75 },
-    { name: "JavaScript", level: 75 },
-    { name: "SQL", level: 70 },
-    { name: "Python", level: 60 },
-    { name: "C++", level: 65 },
-    { name: "Kotlin", level: 55 },
-    { name: "TypeScript", level: 60 },
-  ]} />
-  <SkillCard title="Frameworks" emoji="⚡" skills={[
-    { name: "HTML/CSS", level: 85 },
-    { name: "Spring Boot", level: 70 },
-    { name: "Tailwind CSS", level: 70 },
-    { name: "React", level: 65 },
-    { name: "Next.js", level: 60 },
-    { name: "Node.js", level: 60 },
-  ]} />
-  <SkillCard title="Databases" emoji="🗄️" skills={[
-    { name: "MySQL", level: 80 },
-    { name: "Firebase", level: 70 },
-    { name: "PostgreSQL", level: 60 },
-    { name: "MongoDB", level: 55 },
-  ]} />
-  <SkillCard title="DevOps & Tools" emoji="🚀" skills={[
-    { name: "Git", level: 80 },
-    { name: "Docker", level: 75 },
-    { name: "Arduino", level: 70 },
-    { name: "AWS", level: 55 },
-  ]} />
-</div>
-      </motion.section>
+    <p className="text-lg mb-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+      I'm a B-Tech graduate from Cameroon with a strong passion for software development,
+      specializing in Java, Cloud technologies, and modern web development.
+    </p>
+    <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+      My journey in tech has equipped me with hands-on experience in building full-stack
+      applications, implementing DevOps practices with Docker, and creating scalable solutions.
+    </p>
 
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+      <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-blue-600 dark:text-blue-400">2+</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
+      </div>
+      <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-purple-600 dark:text-purple-400">10+</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Technologies</p>
+      </div>
+      <div className="bg-indigo-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-indigo-100 dark:border-gray-700">
+        <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">3+</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Years Coding</p>
+      </div>
+     <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
+  <p className="text-3xl font-black text-green-600">CM</p>
+  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Cameroon</p>
+</div>
+    </div>
+  </div>
+</motion.section>
+     {/* Skills Section */}
+<motion.section
+  id="skills"
+  className="py-20 px-4 bg-gray-50 dark:bg-gray-800"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+>
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-12">
+      My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Skills</span>
+      <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
+    </h2>
+    <div className="grid md:grid-cols-2 gap-8">
+      <SkillCard title="Languages" emoji="💻" skills={[
+        { name: "Java", level: 80 },
+        { name: "PHP", level: 75 },
+        { name: "JavaScript", level: 75 },
+        { name: "SQL", level: 70 },
+        { name: "Python", level: 60 },
+        { name: "C++", level: 65 },
+        { name: "Kotlin", level: 55 },
+        { name: "TypeScript", level: 60 },
+      ]} />
+      <SkillCard title="Frameworks" emoji="⚡" skills={[
+        { name: "HTML/CSS", level: 85 },
+        { name: "Spring Boot", level: 70 },
+        { name: "Tailwind CSS", level: 70 },
+        { name: "React", level: 65 },
+        { name: "Next.js", level: 60 },
+        { name: "Node.js", level: 60 },
+      ]} />
+      <SkillCard title="Databases" emoji="🗄️" skills={[
+        { name: "MySQL", level: 80 },
+        { name: "Firebase", level: 70 },
+        { name: "PostgreSQL", level: 60 },
+        { name: "MongoDB", level: 55 },
+      ]} />
+      <SkillCard title="DevOps & Tools" emoji="🚀" skills={[
+        { name: "Git", level: 80 },
+        { name: "Docker", level: 75 },
+        { name: "Arduino", level: 70 },
+        { name: "AWS", level: 55 },
+      ]} />
+    </div>
+  </div>
+</motion.section>
       {/* Projects Section */}
       <motion.section
         id="projects"
@@ -201,7 +227,10 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 dark:text-white">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-center mb-12">
+  Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Projects</span>
+  <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
+</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
   <ProjectCard
@@ -238,7 +267,10 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4 dark:text-white">Get In Touch</h2>
+         <h2 className="text-4xl font-bold text-center mb-12">
+  Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Touch</span>
+  <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
+</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg mb-8 dark:text-gray-300">
             I'm currently open to new opportunities. Feel free to reach out!
