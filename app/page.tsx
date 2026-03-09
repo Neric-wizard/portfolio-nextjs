@@ -94,9 +94,9 @@ export default function Home() {
       className="relative w-72 h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
     />
     {/* Floating badge */}
-    <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg">
-      <p className="text-sm font-bold text-gray-800 dark:text-white">⚡ Open to opportunities</p>
-    </div>
+   <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg whitespace-nowrap">
+  <p className="text-sm font-bold text-gray-800 dark:text-white">⚡ Open to opportunities</p>
+</div>
   </motion.div>
 
 </motion.div>
