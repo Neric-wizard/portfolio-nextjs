@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         <motion.div
-  className="relative z-10 w-full max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12"
+ className="relative z-10 w-full max-w-6xl mx-auto px-8 flex flex-col-reverse md:flex-row items-center justify-between gap-12"
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
@@ -91,7 +91,7 @@ export default function Home() {
     <img
       src="/profile.jpg"
       alt="Neric Nigob"
-      className="relative w-72 h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
+      className="relative w-48 h-56 md:w-72 md:h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
     />
     {/* Floating badge */}
     <div className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl shadow-lg">
