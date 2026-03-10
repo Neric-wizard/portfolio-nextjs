@@ -59,7 +59,7 @@ export default function Home() {
     </div>
 
     <h1 className="text-5xl md:text-7xl font-bold mb-4">
-      Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric Nigob</span>
+      Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-red-300">Neric_Nigob</span>
     </h1>
     <FadeText />
     <p className="text-lg md:text-xl mb-8 max-w-2xl opacity-90">
