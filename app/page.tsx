@@ -242,6 +242,14 @@ export default function Home() {
     github="https://github.com/Neric-wizard/course-registration-system"
     images={["/course-1.png", "/course-2.png", "/course-3.png", "/course-4.png", "/course-5.png"]}
   />
+ <ProjectCard
+    title="SaaSify — SaaS Platform"
+    description="Modern SaaS product landing page featuring animated dashboard preview, pricing plans, testimonials, and contact form. Built with performance and conversion in mind."
+    tech={["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]}
+    github="https://github.com/Neric-wizard/saas-landing-page"
+    live="https://saas-landing-page-nine-gamma.vercel.app"
+    images={["/saas-1.png", "/saas-2.png", "/saas-3.png", "/saas-4.png", "/saas-5.png", "/saas-6.png", "/saas-7.png"]}
+  />
   <ProjectCard
     title="Java Spring Boot API"
     description="RESTful API with JWT authentication, Swagger documentation, and MySQL database integration."
@@ -420,6 +428,7 @@ function ProjectCard({
   description: string;
   tech: string[];
   github?: string;
+  live?: string;
   comingSoon?: boolean;
   images?: string[];
 }) {
@@ -467,11 +476,10 @@ className="h-full w-full"
             <span key={t} className="bg-gray-200 dark:bg-gray-600 dark:text-gray-200 px-2 py-1 rounded text-sm">{t}</span>
           ))}
         </div>
-        {comingSoon ? (
+       {comingSoon ? (
           <span className="text-green-600 font-semibold">🚧 Coming Soon</span>
         ) : github ? (
-          
-           <a href={github}
+          <a href={github}
             target="_blank"
             className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
           >
