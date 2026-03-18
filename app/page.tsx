@@ -151,7 +151,7 @@ export default function Home() {
 
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
       <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
-        <p className="text-3xl font-black text-blue-600 dark:text-blue-400">2+</p>
+      <p className="text-3xl font-black text-blue-600 dark:text-blue-400">4+</p>
         <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
       </div>
       <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
@@ -226,8 +226,16 @@ export default function Home() {
   Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Projects</span>
   <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
 </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-12 rounded-full"></div>
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <ProjectCard
+    title="Admin Dashboard"
+    description="Production-ready admin dashboard for businesses to manage users, track orders, monitor analytics and export data. Features real-time updates, keyboard navigation and customizable layouts."
+    tech={["Next.js", "TypeScript", "Tailwind CSS", "Recharts"]}
+    github="https://github.com/Neric-wizard/admin-dashboard"
+    live="https://admin-dashboard-chi-black-48.vercel.app"
+    images={["/dashboard-1.png", "/dashboard-2.png", "/dashboard-3.png", "/dashboard-4.png"]}
+  />
   <ProjectCard
     title="RFID Attendance System"
     description="Smart IoT attendance tracking system integrating Arduino hardware, Firebase Firestore cloud sync, and a Java Swing desktop app with real-time monitoring and CSV export."
@@ -270,11 +278,10 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="max-w-4xl mx-auto text-center">
-         <h2 className="text-4xl font-bold text-center mb-12">
+     <h2 className="text-4xl font-bold text-center mb-12">
   Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Touch</span>
   <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
 </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8 rounded-full"></div>
           <p className="text-lg mb-8 dark:text-gray-300">
             I'm currently open to new opportunities. Feel free to reach out!
           </p>
