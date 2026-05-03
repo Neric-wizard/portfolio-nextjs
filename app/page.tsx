@@ -151,7 +151,7 @@ export default function Home() {
 
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
       <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-blue-100 dark:border-gray-700">
-      <p className="text-3xl font-black text-blue-600 dark:text-blue-400">4+</p>
+      <p className="text-3xl font-black text-blue-600 dark:text-blue-400">6+</p>
         <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Projects Built</p>
       </div>
       <div className="bg-purple-50 dark:bg-gray-800 p-4 rounded-2xl text-center border border-purple-100 dark:border-gray-700">
@@ -228,7 +228,24 @@ export default function Home() {
 </h2>
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+          <ProjectCard
+    title="Freelance Client Portal"
+    description="Full-stack SaaS portal for freelancers to manage clients, invoices and payments. Features glassmorphism UI, Supabase authentication, real-time dashboard and password strength meter."
+    tech={["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Framer Motion"]}
+    github="https://github.com/Neric-wizard/freelance-portal"
+    live="https://freelance-portal-v5w5.vercel.app"
+    images={["/freelance-1.png", "/freelance-2.png", "/freelance-3.png"]}
+  />
+
     <ProjectCard
+  title="PureFLOW — Smart Water System"
+  description="Smart water sterilization dashboard monitoring turbidity, pH, temperature and conductivity in real-time. Uses a Random Forest ML model to classify 7 contaminant types with 85-95% confidence and controls UV/valve treatment automatically."
+  tech={["React", "Firebase", "FastAPI", "scikit-learn", "Recharts"]}
+  github="https://github.com/Neric-wizard/pureflow-dashboard"
+  live="https://pureflow-dashboard-yjd6.vercel.app"
+  images={["/pureflow-1.png", "/pureflow-2.png", "/pureflow-3.png", "/pureflow-4.png"]}
+/>
+<ProjectCard
     title="Admin Dashboard"
     description="Production-ready admin dashboard for businesses to manage users, track orders, monitor analytics and export data. Features real-time updates, keyboard navigation and customizable layouts."
     tech={["Next.js", "TypeScript", "Tailwind CSS", "Recharts"]}
