@@ -89,7 +89,7 @@ export default function Home() {
     {/* Glowing ring */}
     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 blur-md opacity-70 scale-105 rounded-2xl" />
     <img
-      src="/profile.jpg"
+      src="\myimg.png"
       alt="Neric Nigob"
       className="relative w-72 h-80 object-cover rounded-2xl border-4 border-white/20 shadow-2xl"
     />
